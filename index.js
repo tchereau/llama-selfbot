@@ -6,7 +6,7 @@ import path from "path";
 import {talk, ask} from './lib/lib.js';
 
 dotenv.config();
-const model = path.resolve(process.cwd(), "models/ggml-model-q4_0.bin");
+const model = path.resolve(process.cwd(), `models/${process.env.MODEL}`);
 const config = {
   path: model,
   enableLogging: true,
@@ -45,11 +45,11 @@ client.on('messageCreate', async (message) => {
         return;
       }
       istalking = true;
-      globalPrompt = await talk(llama, message, args, globalPrompt);
+      globalPrompt = await talk(llama, message, args, globalPrompt, process.env.THREADS);
       istalking = false;
       break;
     case 'ask':
-      await ask(llama, message, args);
+      await ask(llama, message, args, process.env.THREADS);
       break;
     case 'help':
       message.reply(`lina!ask : poser une simple question à Lina (temps de réponse généralement moyen\nlina!talk : conversation avec Lina (temps de réponse généralement plus longue)`);
