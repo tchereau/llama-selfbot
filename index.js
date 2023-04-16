@@ -52,10 +52,10 @@ client.on('messageCreate', async (message) => {
       await ask(llama, message, args, process.env.THREADS);
       break;
     case 'help':
-      message.reply(`lina!ask : poser une simple question à Lina (temps de réponse généralement moyen\nlina!talk : conversation avec Lina (temps de réponse généralement plus longue)`);
+      message.reply(`${prefix}ask : poser une simple question (temps de réponse généralement moyen\n${prefix}talk : conversation (temps de réponse généralement plus longue)`);
       break;
     default:
-      message.reply('Commande inconnue ! lina!talk ou lina!ask suivis de votre question');
+      message.reply(`Commande inconnue ! ${prefix}talk ou ${prefix}ask suivis de votre question`);
       break;
   }
 });
