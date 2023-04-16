@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "llamabot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@llama-node/core": "^0.0.26",
+    "@llama-node/llama-cpp": "^0.0.26",
+    "discord.js-selfbot-v13": "^2.13.3",
+    "dotenv": "^16.0.3",
+    "llama-node": "^0.0.26"
+  }
+}
