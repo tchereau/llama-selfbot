@@ -29,7 +29,7 @@ client.on('ready', async () => {
   console.log('Modèle chargé !');
 })
 
-let prefix = 'lina!';
+let prefix = process.env.PREFIX;
 let globalPrompt = '';
 let istalking = false;
 
